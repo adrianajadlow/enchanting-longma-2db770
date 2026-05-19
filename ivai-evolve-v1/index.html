@@ -570,17 +570,7 @@
 
       <!-- ============ SCENE 2 — FIELD WALK (7.7 - 24.5s) ============ -->
       <div id="scene2" class="scene">
-        <video
-          id="s2-video"
-          class="clip"
-          data-start="7.7"
-          data-duration="16.8"
-          data-track-index="1"
-          src="assets/walk-talk.mp4"
-          muted
-          playsinline
-          preload="auto"
-        ></video>
+        <img id="s2-video" src="assets/walk-talk-still.jpg" alt="" />
         <div class="s2-vignette"></div>
         <div class="frame-label light">
           <span class="bar"></span>
@@ -748,6 +738,8 @@
 
       // ====== SCENE 2 (7.7-24.5s) ======
       const T1 = 7.7;
+      // Ken Burns slow push on the still image
+      tl.fromTo("#s2-video", { scale: 1.0 }, { scale: 1.10, duration: 17, ease: "none", transformOrigin: "center 55%" }, T1);
       tl.from("#scene2 .frame-label", { x: -50, opacity: 0, duration: 0.6, ease: "power3.out" }, T1 + 0.4);
       tl.from("#scene2 .s2-live", { x: 50, opacity: 0, duration: 0.6, ease: "power3.out" }, T1 + 0.6);
       tl.from("#scene2 .s2-logo-bug", { x: 50, opacity: 0, duration: 0.6, ease: "power3.out" }, T1 + 0.85);
